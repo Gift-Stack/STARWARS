@@ -162,27 +162,11 @@ const Table = ({ characters: data }) => {
             if (name === 'Height') {
               if (direction === 'asc')
                 setTheFormattedData(
-                  formattedData.sort((a, b) => {
-                    if (a.Height < b.Height) {
-                      return -1
-                    }
-                    if (a.Height > b.Height) {
-                      return 1
-                    }
-                    return 0
-                  })
+                  formattedData.sort((a, b) => a.Height - b.Height)
                 )
               else if (direction === 'desc')
                 setTheFormattedData(
-                  formattedData.sort((a, b) => {
-                    if (a.Height < b.Height) {
-                      return 1
-                    }
-                    if (a.Height > b.Height) {
-                      return -1
-                    }
-                    return 0
-                  })
+                  formattedData.sort((a, b) => b.Height - a.Height)
                 )
             }
           },
